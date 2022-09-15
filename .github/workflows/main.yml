@@ -62,7 +62,8 @@ jobs:
           
           mv output/ir_domains.txt domain-list-community/data/ir
           mv output/other_domains.txt domain-list-community/data/other
-          cp src/data/ads.txt domain-list-community/data/ads
+          git archive --remote=git@github.com:MasterKia/PersianBlocker.git HEAD |  tar xvf - PersianBlockerHosts.txt
+          mv PersianBlockerHosts.txt domain-list-community/data/ads
           
           cd domain-list-community
           go run ./ --outputdir=../output
