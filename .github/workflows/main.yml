@@ -62,8 +62,8 @@ jobs:
           
           mv output/ir_domains.txt domain-list-community/data/ir
           mv output/other_domains.txt domain-list-community/data/other
-          wget 'https://raw.githubusercontent.com/MasterKia/PersianBlocker/main/PersianBlockerHosts.txt' -O src/data/ads.txt
-          mv src/data/ads.txt domain-list-community/data/ads
+          curl 'https://raw.githubusercontent.com/MasterKia/PersianBlocker/main/PersianBlockerHosts.txt' > src/data/ads.txt
+          cp src/data/ads.txt domain-list-community/data/ads
           
           cd domain-list-community
           go run ./ --outputdir=../output
